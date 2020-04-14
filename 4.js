@@ -27,32 +27,46 @@
  */
 
 function groupArk(animals) {
-	var binatang = [];
-	for (var i = 0; i < animals.length; i++) {
-		binatang.push(animals[i].nama[0]);
-	}
-	// console.log(binatang);
-
-	var hapusGanda = [];
-	for (var i = 0; i < binatang.length; i++) {
+	// cara langsung dapet huruf awal nama tanpa nilai ganda
+	var hurufAwal = [];
+	for(var i = 0; i < animals.length; i++) {
 		var cek = 0;
-		for (var j = 0; j < hapusGanda.length; j++) {
-			if (binatang[i] == hapusGanda[j]) {
+		for (var j = 0; j < hurufAwal.length; j++) {
+			if (animals[i].nama[0] == hurufAwal[j]) {
 				cek = 1;
 			}
 		}
 		if (cek == 0) {
-			hapusGanda.push(binatang[i]);
+			hurufAwal.push(animals[i].nama[0]);
 		}
 	}
-	// console.log(hapusGanda);
+
+	// var binatang = [];
+	// for (var i = 0; i < animals.length; i++) {
+	// 	binatang.push(animals[i].nama[0]);
+	// }
+	// // console.log(binatang);
+
+	// var hapusGanda = [];
+	// for (var i = 0; i < binatang.length; i++) {
+	// 	var cek = 0;
+	// 	for (var j = 0; j < hapusGanda.length; j++) {
+	// 		if (binatang[i] == hapusGanda[j]) {
+	// 			cek = 1;
+	// 		}
+	// 	}
+	// 	if (cek == 0) {
+	// 		hapusGanda.push(binatang[i]);
+	// 	}
+	// }
+	// // console.log(hapusGanda);
 
 	var objHasil = {};
-	for (var i = 0; i < hapusGanda.length; i++) {
-		objHasil[hapusGanda[i]] = [];
+	for (var i = 0; i < hurufAwal.length; i++) {
+		objHasil[hurufAwal[i]] = [];
 		for (var j = 0; j < animals.length; j++) {
-			if (animals[j].nama[0] == hapusGanda[i]) {
-				objHasil[hapusGanda[i]].push(animals[j]);
+			if (animals[j].nama[0] == hurufAwal[i]) {
+				objHasil[hurufAwal[i]].push(animals[j]);
 			}
 		}
 	}
