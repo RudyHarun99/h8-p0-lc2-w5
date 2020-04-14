@@ -51,32 +51,36 @@ function mercRecruiter(mercenary) {
 	var point = 0;
 	
 	for (var i = 0; i < mercenary.name.length; i++) {
-		if (mercenary.name[i] == '.') {
-			point += 20;
-		}
+		if (mercenary.name[i] == '.') point+=20;
+		// {
+		// 	point += 20;
+		// }
 	}
 
 	for (var i = 0; i < mercenary.skills.length; i++) {
 		for (var j = 0; j < arrSkill.length; j++) {
-			if (mercenary.skills[i] == arrSkill[j]) {
-				point += 10;
-			}
+			if (mercenary.skills[i] == arrSkill[j]) point+=10;
+			// {
+			// 	point += 10;
+			// }
 		}
 	}
 	
 	for (var i = 0; i < mercenary.weapons.length; i++) {
 		for (var j = 0; j < arrWeapon.length; j++) {
-			if (mercenary.weapons[i] == arrWeapon[j]) {
-				point += 20;
-			}
+			if (mercenary.weapons[i] == arrWeapon[j]) point+=20;
+			// {
+			// 	point += 20;
+			// }
 		}
 	}
 
-	if (point >= 60) {
-		objHasil.status = 'Passed';
-	} else {
-		objHasil.status = 'Failed';
-	}
+	point >= 60 ? objHasil.status = 'Passed' : objHasil.status = 'Failed';
+	// if (point >= 60) {
+	// 	objHasil.status = 'Passed';
+	// } else {
+	// 	objHasil.status = 'Failed';
+	// }
 	// console.log(point);
 	return objHasil;
 }
