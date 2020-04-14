@@ -59,20 +59,25 @@
 function calculateCapacity(stadium, visitors) {
   var hitung = 0;
   var tangga = stadium.length;
+
   for (var i = 0; i < stadium.length; i++) {
     for (var j = 0; j < stadium[i].length; j++) {
-      if (stadium[i][j] == ' ') {
-        hitung++;
-      }
+      if (stadium[i][j] == ' ') hitung++;
+      // {
+      //   hitung++;
+      // }
     }
   }
   var kapasitas = hitung - tangga;
   // console.log(kapasitas);
-  if (kapasitas >= visitors) {
-    return 'Kapasitas Stadium Cukup.';
-  } else {
-    return 'Stadium Overcapacity.';
-  }
+  var hasil = '';
+  kapasitas >= visitors ? hasil = 'Kapasitas Stadium Cukup.' : hasil = 'Stadium Overcapacity.';
+  // if (kapasitas >= visitors) {
+  //   return 'Kapasitas Stadium Cukup.';
+  // } else {
+  //   return 'Stadium Overcapacity.';
+  // }
+  return hasil;
 }
 
 
